@@ -1,42 +1,203 @@
-    <!-- أهم جزء تم تعديله 👇 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Islam & Mayar Wedding</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+background:#f4efe8;
+font-family:'Cormorant Garamond', serif;
+text-align:center;
+color:#3d2f22;
+}
+
+.container{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.envelope{
+width:280px;
+height:180px;
+background:#e8dccd;
+position:relative;
+cursor:pointer;
+border-radius:8px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.flap{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#e2d5c4;
+clip-path:polygon(0 0,100% 0,50% 60%);
+transform-origin:top;
+transition:1s;
+}
+
+.envelope.open .flap{
+transform:rotateX(180deg);
+}
+
+.seal{
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+width:50px;
+height:50px;
+border-radius:50%;
+background:#c9a46c;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-weight:bold;
+}
+
+.invite{
+display:none;
+padding:20px;
+}
+
+.show{
+display:block;
+animation:fade 1s ease;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1;}
+}
+
+.names{
+font-family:'Great Vibes', cursive;
+font-size:50px;
+color:#b68b5b;
+}
+
+.btn{
+margin:10px;
+padding:12px 20px;
+border-radius:30px;
+border:none;
+cursor:pointer;
+background:#b68b5b;
+color:white;
+font-size:14px;
+}
+
+.countdown{
+display:flex;
+gap:10px;
+justify-content:center;
+margin-top:10px;
+}
+
+.box{
+background:white;
+padding:10px;
+border-radius:10px;
+width:60px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2 id="guestName"></h2>
+
+<div class="envelope" id="env">
+<div class="flap"></div>
+<div class="seal">IM</div>
+</div>
+
+<p>Tap to Open</p>
+
+<div class="invite" id="invite">
+
+<div class="names">Islam & Mayar</div>
+
+<p>request the pleasure of your company</p>
+
+<img src="couple.jpg" width="90%" style="border-radius:20px; margin:10px 0;">
+
+<p>02 June 2026<br>7:00 PM</p>
+<p>Jewel Sport City Resort<br>Treasure Hall</p>
+
+<a href="https://maps.app.goo.gl/FmuCA1K6XNKTJBzA7">
+<button class="btn">View Location</button>
+</a>
+
+<div class="countdown">
+<div class="box"><span id="d"></span><br>Days</div>
+<div class="box"><span id="h"></span><br>Hrs</div>
+<div class="box"><span id="m"></span><br>Min</div>
+<div class="box"><span id="s"></span><br>Sec</div>
+</div>
+
+<button class="btn" onclick="rsvp()">RSVP</button>
+
+<audio id="music" src="music.mp3"></audio>
+
+</div>
+
+</div>
+
 <script>
-const INVITE = {
-  groom: "Islam",
-  bride: "Mayar",
+let env = document.getElementById("env");
+let invite = document.getElementById("invite");
+let music = document.getElementById("music");
 
-  locationUrl: "https://maps.app.goo.gl/FmuCA1K6XNKTJBzA7",
-
-  eventDateISO: "2026-06-02T19:00:00",
-  dateText: "02 / 06 / 2026",
-  weekdayText: "Tuesday",
-  timeText: "7:00 PM",
-  timeSubText: "Evening",
-
-  venueText: "Jewel Sport City Resort",
-  venueSubText: "Treasure Hall",
-
-  // ✅ تم تعديل الإيميل
-  rsvpEmail: "Mkadyweddingplanner@gmail.com",
-
-  // ✅ تم تعديل اسم الصورة
-  couplePhotoFile: "couple.jpg",
-
-  // ✅ تم تعديل اسم الأغنية
-  songFile: "music.mp3",
-
-  heroTitle: "Come Celebrate With Us",
-  openText: "Tap to Open",
-
-  familyLine: "Together with their families",
-  inviteCopy: "request the pleasure of your company as they celebrate their marriage",
-
-  locationButton: "View Location",
-  rsvpButton: "Kindly RSVP",
-
-  musicTitle: "Our Song",
-  musicArtist: "Play the soundtrack of our evening",
-
-  rsvpTitle: "RSVP",
-  rsvpCopy: "A gentle note of confirmation would mean so much to us."
+env.onclick = ()=>{
+env.classList.add("open");
+invite.classList.add("show");
+music.play();
 };
+
+function rsvp(){
+let name = prompt("Enter your name:");
+window.location.href=`mailto:Mkadyweddingplanner@gmail.com?subject=RSVP&body=${name}`;
+}
+
+// Guest Name from link
+const urlParams = new URLSearchParams(window.location.search);
+const guest = urlParams.get('guest');
+if(guest){
+document.getElementById("guestName").innerText="For "+guest;
+}
+
+// Countdown
+const target = new Date("June 2, 2026 19:00:00").getTime();
+
+setInterval(()=>{
+let now = new Date().getTime();
+let diff = target-now;
+
+let d = Math.floor(diff/(1000*60*60*24));
+let h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+let m = Math.floor((diff%(1000*60*60))/(1000*60));
+let s = Math.floor((diff%(1000*60))/1000);
+
+document.getElementById("d").innerText=d;
+document.getElementById("h").innerText=h;
+document.getElementById("m").innerText=m;
+document.getElementById("s").innerText=s;
+},1000);
 </script>
+
+</body>
+</html>
