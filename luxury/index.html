@@ -9,21 +9,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#f2ebe2;
       --paper:#fcf8f2;
       --paper-2:#f4ecdf;
+      --paper-3:#efe4d4;
       --ink:#211a15;
       --muted:#7b6d61;
       --gold:#b9976d;
       --gold-2:#d0b38c;
+      --gold-3:#8b6a47;
       --shadow:0 30px 90px rgba(60,42,22,.14);
       --soft-shadow:0 14px 34px rgba(60,42,22,.08);
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       min-height:100vh;
@@ -40,10 +44,13 @@
       position:fixed;
       inset:0;
       pointer-events:none;
+      z-index:0;
       opacity:.18;
       background:
         radial-gradient(ellipse at 8% 18%, rgba(169,142,107,.24), transparent 18%),
-        radial-gradient(ellipse at 90% 18%, rgba(169,142,107,.18), transparent 14%);
+        radial-gradient(ellipse at 90% 18%, rgba(169,142,107,.18), transparent 14%),
+        radial-gradient(ellipse at 12% 84%, rgba(169,142,107,.2), transparent 16%),
+        radial-gradient(ellipse at 88% 88%, rgba(169,142,107,.16), transparent 13%);
       filter:blur(18px);
     }
 
@@ -94,10 +101,13 @@
       margin-bottom:18px;
     }
 
-    .ornament::before,.ornament::after{
+    .ornament::before,
+    .ornament::after{
       content:"";
       position:absolute;
-      left:0; right:0; top:50%;
+      left:0;
+      right:0;
+      top:50%;
       height:1px;
       transform:translateY(-50%);
       background:linear-gradient(90deg, transparent, var(--gold), transparent);
@@ -118,12 +128,15 @@
       font-family:"Cormorant Garamond",serif;
       font-size:clamp(2rem, 6vw, 3rem);
       font-weight:600;
+      letter-spacing:.02em;
       color:#3f3127;
     }
 
     .guest-chip{
       display:inline-flex;
       align-items:center;
+      justify-content:center;
+      gap:8px;
       padding:10px 16px;
       border-radius:999px;
       background:rgba(255,255,255,.4);
@@ -167,7 +180,15 @@
       transition:transform .35s ease;
     }
 
-    .env-back,.env-front,.env-flap,.seal,.preview-card{
+    .envelope:hover{
+      transform:translateY(-2px);
+    }
+
+    .env-back,
+    .env-front,
+    .env-flap,
+    .seal,
+    .preview-card{
       position:absolute;
       inset:0;
       border-radius:10px;
@@ -199,6 +220,7 @@
         linear-gradient(180deg, rgba(255,255,255,.08), rgba(0,0,0,.04)),
         url('../couple.jpg') center/cover no-repeat;
       clip-path:polygon(50% 0, 100% 38%, 74% 100%, 26% 100%, 0 38%);
+      filter:saturate(.92) brightness(1.02);
     }
 
     .env-front{
@@ -209,14 +231,18 @@
       clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, 50% 62%, 100% 0);
     }
 
-    .env-front::before,.env-front::after{
+    .env-front::before,
+    .env-front::after{
       content:"";
       position:absolute;
       inset:0;
       background:linear-gradient(135deg, transparent 49.3%, rgba(96,75,49,.09) 49.8%, transparent 50.3%);
       opacity:.92;
     }
-    .env-front::after{ transform:scaleX(-1) }
+
+    .env-front::after{
+      transform:scaleX(-1);
+    }
 
     .env-flap{
       z-index:5;
@@ -258,6 +284,7 @@
       color:#fffaf2;
       font-family:"Cormorant Garamond",serif;
       font-size:30px;
+      letter-spacing:.02em;
     }
 
     .envelope.open .env-flap{
@@ -296,10 +323,12 @@
     }
 
     .paper{
+      position:relative;
       padding:24px 18px 30px;
     }
 
     .frame{
+      position:relative;
       border:1px solid rgba(185,151,109,.3);
       border-radius:26px;
       padding:18px 14px 22px;
@@ -317,8 +346,12 @@
     .names{
       text-align:center;
       margin-top:10px;
+    }
+
+    .names .script{
       font-family:"Great Vibes",cursive;
       font-size:clamp(3.8rem, 12vw, 5.4rem);
+      line-height:.94;
       color:#a88355;
     }
 
@@ -377,6 +410,7 @@
     .detail-main{
       font-family:"Cormorant Garamond",serif;
       font-size:clamp(1rem, 3vw, 1.18rem);
+      line-height:1.25;
       text-transform:uppercase;
       color:#493b2f;
     }
@@ -387,6 +421,7 @@
       font-size:clamp(1rem, 3vw, 1.14rem);
       text-transform:uppercase;
       color:#70614f;
+      line-height:1.2;
     }
 
     .btns{
@@ -475,7 +510,9 @@
 
     .progress-fill{
       position:absolute;
-      top:0; left:0; bottom:0;
+      top:0;
+      left:0;
+      bottom:0;
       width:0%;
       background:linear-gradient(90deg, #d4bb97, #b9976d);
     }
@@ -510,6 +547,7 @@
     .count-num{
       font-family:"Cormorant Garamond",serif;
       font-size:clamp(2rem, 6vw, 2.6rem);
+      line-height:1;
       font-weight:700;
       color:#4a3b2e;
     }
@@ -536,6 +574,7 @@
       font-family:"Cormorant Garamond",serif;
       font-size:1.86rem;
       text-transform:uppercase;
+      letter-spacing:.08em;
       color:#4a3a2d;
     }
 
@@ -547,7 +586,10 @@
       color:#7a6d61;
     }
 
-    .field{ margin-bottom:10px; }
+    .field{
+      margin-bottom:10px;
+    }
+
     .field label{
       display:block;
       margin-bottom:6px;
@@ -558,7 +600,9 @@
       text-transform:uppercase;
     }
 
-    .field input,.field select,.field textarea{
+    .field input,
+    .field select,
+    .field textarea{
       width:100%;
       border:1px solid rgba(185,151,109,.20);
       background:#fffdf9;
@@ -648,8 +692,13 @@
         <section class="panel" id="panel">
           <div class="paper">
             <div class="frame">
+
               <div class="family-line" id="familyLine"></div>
-              <div class="names" id="coupleNames"></div>
+
+              <div class="names">
+                <div class="script" id="coupleNames"></div>
+              </div>
+
               <div class="copy" id="inviteCopy"></div>
 
               <div class="hero-photo">
@@ -684,7 +733,9 @@
                 <div class="track">
                   <div class="track-title" id="musicTitle"></div>
                   <div class="track-sub" id="musicArtist"></div>
-                  <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+                  <div class="progress">
+                    <div class="progress-fill" id="progressFill"></div>
+                  </div>
                 </div>
                 <button class="volume" id="muteBtn" aria-label="Mute music">🔊</button>
               </div>
@@ -743,6 +794,7 @@
                 <button class="btn btn-gold" id="rsvpSubmit"></button>
                 <div class="status" id="status"></div>
               </div>
+
             </div>
           </div>
         </section>
@@ -755,7 +807,10 @@
   </audio>
 
   <script>
-    const $ = (id) => document.getElementById(id);
+    function $(id){
+      return document.getElementById(id);
+    }
+
     const envelope = $("envelope");
     const cover = $("cover");
     const panel = $("panel");
@@ -768,7 +823,7 @@
       $("heroTitle").textContent = INVITE.heroTitle;
       $("openText").textContent = INVITE.openText;
       $("familyLine").textContent = INVITE.familyLine;
-      $("coupleNames").textContent = `${INVITE.groom} & ${INVITE.bride}`;
+      $("coupleNames").textContent = INVITE.groom + " & " + INVITE.bride;
       $("inviteCopy").textContent = INVITE.inviteCopy;
       $("dateText").textContent = INVITE.dateText;
       $("weekdayText").textContent = INVITE.weekdayText;
@@ -798,14 +853,15 @@
 
     function openInvitation(){
       if(envelope.classList.contains("open")) return;
+
       envelope.classList.add("open");
 
-      setTimeout(() => {
+      setTimeout(function(){
         cover.classList.add("hidden");
         panel.classList.add("show");
       }, 700);
 
-      setTimeout(() => {
+      setTimeout(function(){
         panel.scrollIntoView({ behavior:"smooth", block:"start" });
       }, 1100);
 
@@ -813,14 +869,15 @@
     }
 
     envelope.addEventListener("click", openInvitation);
-    envelope.addEventListener("keydown", (e) => {
+
+    envelope.addEventListener("keydown", function(e){
       if(e.key === "Enter" || e.key === " "){
         e.preventDefault();
         openInvitation();
       }
     });
 
-    playBtn.addEventListener("click", async () => {
+    playBtn.addEventListener("click", async function(){
       if(audio.paused){
         try{
           await audio.play();
@@ -832,17 +889,19 @@
       }
     });
 
-    muteBtn.addEventListener("click", () => {
+    muteBtn.addEventListener("click", function(){
       audio.muted = !audio.muted;
       muteBtn.textContent = audio.muted ? "🔇" : "🔊";
     });
 
-    audio.addEventListener("timeupdate", () => {
+    audio.addEventListener("timeupdate", function(){
       if(!audio.duration || Number.isNaN(audio.duration)) return;
-      progressFill.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+      progressFill.style.width = ((audio.currentTime / audio.duration) * 100) + "%";
     });
 
-    function pad(num){ return String(num).padStart(2, "0"); }
+    function pad(num){
+      return String(num).padStart(2, "0");
+    }
 
     function updateCountdown(){
       const target = new Date(INVITE.eventDateISO).getTime();
@@ -868,21 +927,21 @@
       const message = $("message").value.trim();
 
       return [
-        `Wedding RSVP`,
-        `For: ${INVITE.groom} & ${INVITE.bride}`,
-        `Guest Name: ${guestName}`,
-        `Attendance: ${attendance}`,
-        `Number of Guests: ${guests}`,
-        message ? `Message: ${message}` : ""
+        "Wedding RSVP",
+        "For: " + INVITE.groom + " & " + INVITE.bride,
+        "Guest Name: " + guestName,
+        "Attendance: " + attendance,
+        "Number of Guests: " + guests,
+        message ? "Message: " + message : ""
       ].filter(Boolean).join("\\n");
     }
 
-    $("rsvpSubmit").addEventListener("click", () => {
+    $("rsvpSubmit").addEventListener("click", function(){
       const status = $("status");
-      const subject = encodeURIComponent(`RSVP - ${INVITE.groom} & ${INVITE.bride}`);
+      const subject = encodeURIComponent("RSVP - " + INVITE.groom + " & " + INVITE.bride);
       const body = encodeURIComponent(buildRSVPMessage());
 
-      window.location.href = `mailto:${INVITE.rsvpEmail}?subject=${subject}&body=${body}`;
+      window.location.href = "mailto:" + INVITE.rsvpEmail + "?subject=" + subject + "&body=" + body;
       status.textContent = "Opening your email app…";
     });
 
@@ -891,4 +950,4 @@
     setInterval(updateCountdown, 1000);
   </script>
 </body>
-</html> 
+</html>
