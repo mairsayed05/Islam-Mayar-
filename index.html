@@ -443,42 +443,58 @@
     }
 
     .tap-text{
-      margin-top:18px;
-      font-size:12px;
-      letter-spacing:.18em;
-      animation:tapBlink 2.6s ease-in-out infinite;
-      position:relative;
-      z-index:1;
-    }
+  margin-top:18px;
+  font-size:11px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:#9a8873;
+  animation:tapBlink 2.6s ease-in-out infinite;
+  position:relative;
+  z-index:1;
+}
 
     @keyframes tapBlink{
       0%,100%{opacity:.7}
       50%{opacity:1}
     }
 
-    .sections{
-      position:relative;
-      z-index:2;
-      opacity:0;
-      visibility:hidden;
-      pointer-events:none;
-      max-height:0;
-      overflow:hidden;
-      transform:translateY(28px);
-      transition:
-        opacity .9s ease,
-        transform .9s ease,
-        max-height 1.2s ease,
-        visibility .9s ease;
-    }
+    ..sections{
+  display:none;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transform:translateY(40px) scale(.985);
+  filter:blur(10px);
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(.22,.8,.2,1),
+    filter 1s ease;
+}
 
-    .sections.show{
-      opacity:1;
-      visibility:visible;
-      pointer-events:auto;
-      max-height:9999px;
-      transform:translateY(0);
-    }
+.sections.show{
+  display:block;
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateY(0) scale(1);
+  filter:blur(0);
+}
+
+.section-card.section-enter{
+  opacity:0;
+  transform:translateY(34px) scale(.985);
+  filter:blur(10px);
+  transition:
+    opacity .95s ease,
+    transform .95s cubic-bezier(.22,.8,.2,1),
+    filter .95s ease;
+}
+
+.section-card.section-enter.in{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  filter:blur(0);
+}
 
     .topbar{
       position:sticky;
@@ -1028,6 +1044,7 @@
     </section>
 
     <div class="sections" id="sections">
+  <div class="section-stack">
       <div class="topbar">
         <div class="brand">
           <span class="brand-dot"></span>
@@ -1325,27 +1342,27 @@
     }
 
     async function fadeInMusic(){
-      try{
-        music.volume = 0.01;
-        music.muted = false;
-        await music.play();
-        playBtn.textContent = "❚❚";
-        muteBtn.textContent = "🔊";
+  try{
+    music.volume = 0.01;
+    music.muted = false;
+    await music.play();
+    playBtn.textContent = "❚❚";
+    muteBtn.textContent = "🔊";
 
-        let vol = 0.01;
-        const target = 0.55;
-        const step = 0.03;
+    let vol = 0.01;
+    const target = 0.42;
+    const step = 0.02;
 
-        const interval = setInterval(() => {
-          vol += step;
-          if(vol >= target){
-            music.volume = target;
-            clearInterval(interval);
-          }else{
-            music.volume = vol;
-          }
-        }, 180);
-      }catch(e){}
+    const interval = setInterval(() => {
+      vol += step;
+      if(vol >= target){
+        music.volume = target;
+        clearInterval(interval);
+      }else{
+        music.volume = vol;
+      }
+    }, 220);
+  }catch(e){}
     }
 
     function startOpeningOverlay(){
@@ -1372,25 +1389,50 @@
     }
 
     function openInvitation(){
-      if(cover.classList.contains("hidden")) return;
+    function observeSections(){
+  if(observerStarted) return;
+  observerStarted = true;
 
-      playLuxuryClick();
-      startOpeningOverlay();
+  const cards = document.querySelectorAll(".section-enter");
 
-      setTimeout(() => {
-        cover.classList.add("hidden");
-        sections.classList.add("show");
-        observeSections();
-        fadeInMusic();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if(entry.isIntersecting){
+        const cardsArray = Array.from(cards);
+        const index = cardsArray.indexOf(entry.target);
 
         setTimeout(() => {
-          document.getElementById("story")?.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-        }, 300);
-      }, 900);
-    }
+          entry.target.classList.add("in");
+        }, index * 120);
+      }
+    });
+  }, { threshold: 0.16 });
+
+  cards.forEach(card => io.observe(card));
+}
+
+function openInvitation(){
+  if(cover.classList.contains("hidden")) return;
+
+  playLuxuryClick();
+  startOpeningOverlay();
+
+  setTimeout(() => {
+    cover.classList.add("hidden");
+    sections.classList.add("show");
+
+    setTimeout(() => {
+      observeSections();
+      fadeInMusic();
+
+      document.getElementById("story")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 250);
+
+  }, 900);
+}
 
     openButton.addEventListener("click", openInvitation);
     openButton.addEventListener("keydown", function(e){
@@ -1488,3 +1530,5 @@ setInterval(updateCountdown, 1000);
 </script>
 </body>
 </html> 
+</div>
+</div>
