@@ -1471,7 +1471,14 @@
   parallaxTwo.style.transform = `translateY(${y * 0.18}px)`;
 }, { passive: true });
 
-document.getElementById("openButton").addEventListener("click", openInvitation);
+openButton.addEventListener("click", openInvitation);
+
+openButton.addEventListener("keydown", function(e){
+  if(e.key === "Enter" || e.key === " "){
+    e.preventDefault();
+    openInvitation();
+  }
+});
 
     initContent();
 detectImage();
