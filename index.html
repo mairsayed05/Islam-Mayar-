@@ -1,110 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Islam & Mayar Wedding</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #f5f1eb;
-  text-align: center;
+<title>Islam & Mayar Wedding</title><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet"><style>
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#f4efe8;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
 }
 
-.container {
-  padding: 50px 20px;
+.container{
+  text-align:center;
 }
 
-h1 {
-  font-size: 28px;
-  color: #333;
+.envelope{
+  width:260px;
+  height:180px;
+  background:#e6dccf;
+  position:relative;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.5s;
 }
 
-h2 {
-  font-size: 20px;
-  color: #777;
+.flap{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:#d8cbb7;
+  clip-path:polygon(0 0,100% 0,50% 50%);
+  transition:0.6s;
 }
 
-img {
-  width: 80%;
-  max-width: 350px;
-  border-radius: 15px;
-  margin-top: 20px;
+.open .flap{
+  transform:rotateX(180deg);
 }
 
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 30px;
+.card{
+  position:absolute;
+  top:20px;
+  left:10px;
+  width:240px;
+  height:140px;
+  background:white;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.5s;
 }
 
-.box {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  width: 60px;
+.open .card{
+  opacity:1;
+  transform:translateY(0);
 }
 
-button {
-  margin-top: 30px;
-  padding: 12px 25px;
-  border: none;
-  background: black;
-  color: white;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 16px;
+img{
+  width:100px;
+  border-radius:50%;
+  margin-bottom:10px;
 }
-</style>
-</head>
 
-<body>
+h1{
+  font-family:'Playfair Display',serif;
+  margin:5px;
+}
 
-<div class="container">
+.countdown{
+  margin-top:20px;
+  font-size:18px;
+}
 
-<h1>Come Celebrate With Us</h1>
-<h2>Islam & Mayar</h2>
-<p>June 2, 2026</p>
+button{
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  background:#c9a96e;
+  color:white;
+  border-radius:20px;
+  cursor:pointer;
+}
+</style></head><body><div class="container">
+  <div class="envelope" id="env" onclick="openCard()">
+    <div class="flap"></div><div class="card">
+  <img src="couple.jpg">
+  <h1>Islam & Mayar</h1>
+  <p>June 2, 2026</p>
 
-<img src="../couple.jpg">
+  <div class="countdown" id="countdown"></div>
 
-<div class="countdown">
-  <div class="box"><span id="d">0</span><br>Days</div>
-  <div class="box"><span id="h">0</span><br>Hours</div>
-  <div class="box"><span id="m">0</span><br>Min</div>
-  <div class="box"><span id="s">0</span><br>Sec</div>
+  <button onclick="sendRSVP(event)">RSVP</button>
 </div>
 
-<button onclick="rsvp()">RSVP</button>
-
-</div>
-
-<audio id="music" autoplay loop>
-  <source src="../music.mp3" type="audio/mpeg">
-</audio>
+  </div>
+</div><audio id="music" src="music.mp3"></audio>
 
 <script>
-// Countdown
-var target = new Date("June 2, 2026 19:00:00").getTime();
+function openCard(){
+  document.getElementById("env").classList.toggle("open");
+  document.getElementById("music").play();
+}
 
-setInterval(function() {
-  var now = new Date().getTime();
-  var diff = target - now;
+function sendRSVP(e){
+  e.stopPropagation();
+  window.location.href="mailto:mkadyweddingplanner@gmail.com?subject=RSVP";
+}
 
-  var d = Math.floor(diff / (1000*60*60*24));
-  var h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-  var m = Math.floor((diff % (1000*60*60)) / (1000*60));
-  var s = Math.floor((diff % (1000*60)) / 1000);
+const targetDate = new Date("June 2, 2026 19:00:00").getTime();
 
-  document.getElementById("d").innerText = d;
-  document.getElementById("h").innerText = h;
-  document.getElementById("m").innerText = m;
-  document.getElementById("s").innerText = s;
-}, 1000);
+setInterval(()=>{
+  let now = new Date().getTime();
+  let diff = targetDate - now;
 
-// RSVP
-function rsvp() {
-  var name = prompt
+  let d = Math.floor(diff/(1000*60*60*24));
+  let h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  let m = Math.floor((diff%(1000*60*60))/(1000*60));
+  let s = Math.floor((diff%(1000*60))/1000);
+
+  document.getElementById("countdown").innerHTML =
+    d+"d "+h+"h "+m+"m "+s+"s";
+},1000);
+</script></body>
+</html>
