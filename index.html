@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Islam &amp; Mayar | Wedding Invitation</title>
-  <meta name="description" content="Luxury cinematic wedding invitation for Islam & Mayar." />
+  <title>إسلام وميار | دعوة زفاف</title>
+  <meta name="description" content="دعوة زفاف رقمية فاخرة لإسلام وميار." />
   <meta name="theme-color" content="#efe6da" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -28,7 +28,7 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:"Inter",system-ui,sans-serif;
+      font-family:"Cairo", system-ui, sans-serif;
       color:var(--ink);
       background:
         radial-gradient(circle at 16% 10%, rgba(255,255,255,.62), transparent 22%),
@@ -101,24 +101,21 @@
       display:grid;
       place-items:center;
       color:#fff8ef;
-      font-family:"Cormorant Garamond",serif;
-      font-size:30px;
-      letter-spacing:.06em;
+      font-family:"Amiri", serif;
+      font-size:28px;
+      letter-spacing:.04em;
       background:radial-gradient(circle at 30% 25%, #e5cda7, #c4a67e 60%, #a27f5a 100%);
       box-shadow:0 18px 34px rgba(90,67,42,.16);
       animation:loaderPulse 2.4s ease-in-out infinite;
     }
     .loader-title{
-      font-family:"Cormorant Garamond",serif;
-      font-size:clamp(1.5rem,4vw,2rem);
-      letter-spacing:.18em;
-      text-transform:uppercase;
+      font-family:"Amiri", serif;
+      font-size:clamp(1.7rem,4vw,2.3rem);
       color:#6d5d4b;
     }
     .loader-sub{
-      font-size:.78rem;
-      letter-spacing:.28em;
-      text-transform:uppercase;
+      font-size:.85rem;
+      letter-spacing:.2em;
       color:#9f8d79;
     }
     @keyframes loaderPulse{
@@ -144,7 +141,7 @@
       visibility:visible;
     }
     .opening-panel{
-      width:min(92vw, 430px);
+      width:min(92vw, 460px);
       padding:28px 24px;
       border-radius:28px;
       border:1px solid rgba(186,155,115,.18);
@@ -158,31 +155,27 @@
       transform:translateY(0) scale(1);
     }
     .opening-eyebrow{
-      font-size:.72rem;
-      letter-spacing:.24em;
-      text-transform:uppercase;
+      font-size:.78rem;
+      letter-spacing:.14em;
       color:var(--muted);
       margin-bottom:8px;
     }
     .opening-title{
       margin:0 0 8px;
-      font-family:"Cormorant Garamond",serif;
-      font-size:2.2rem;
-      line-height:1.05;
+      font-family:"Amiri", serif;
+      font-size:2rem;
+      line-height:1.2;
       color:var(--ink);
     }
     .opening-text{
       margin:0;
-      font-family:"Cormorant Garamond",serif;
-      font-size:1.15rem;
-      line-height:1.45;
+      font-family:"Noto Naskh Arabic", serif;
+      font-size:1.2rem;
+      line-height:1.7;
       color:#6d5c4a;
     }
 
-    .site{
-      position:relative;
-      z-index:1;
-    }
+    .site{position:relative;z-index:1}
 
     .cover{
       min-height:100vh;
@@ -225,13 +218,12 @@
     }
 
     .eyebrow,.date-line,.tap-text,.footer-note{
-      text-transform:uppercase;
       text-align:center;
       color:var(--muted);
     }
     .eyebrow{
-      font-size:10px;
-      letter-spacing:.34em;
+      font-size:11px;
+      letter-spacing:.2em;
       margin-bottom:12px;
       position:relative;
       z-index:1;
@@ -244,17 +236,15 @@
       border-radius:999px;
       border:1px solid rgba(186,155,115,.16);
       background:rgba(255,255,255,.50);
-      font-size:.84rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
+      font-size:.9rem;
       color:#7a6a59;
       position:relative;
       z-index:1;
     }
     .cover-title{
-      font-family:"Cormorant Garamond",serif;
-      font-size:clamp(2.5rem, 7vw, 4rem);
-      line-height:1;
+      font-family:"Amiri", serif;
+      font-size:clamp(2.3rem, 7vw, 4rem);
+      line-height:1.1;
       margin:0;
       color:var(--ink);
       position:relative;
@@ -265,16 +255,16 @@
     .guest-badge{
       min-height:30px;
       margin:12px 0 12px;
-      font-family:"Cormorant Garamond",serif;
-      font-size:1.24rem;
+      font-family:"Noto Naskh Arabic", serif;
+      font-size:1.2rem;
       color:#6c5d4c;
       position:relative;
       z-index:1;
     }
     .date-line{
       margin:0 0 28px;
-      font-size:11px;
-      letter-spacing:.22em;
+      font-size:12px;
+      letter-spacing:.08em;
       position:relative;
       z-index:1;
     }
@@ -299,16 +289,10 @@
       50%{opacity:1;transform:scale(1.03)}
     }
 
-    .sparkles{
-      position:absolute;
-      inset:-18px;
-      pointer-events:none;
-    }
+    .sparkles{position:absolute;inset:-18px;pointer-events:none}
     .spark{
       position:absolute;
-      width:8px;
-      height:8px;
-      border-radius:50%;
+      width:8px;height:8px;border-radius:50%;
       background:radial-gradient(circle, rgba(255,249,240,.98) 0%, rgba(216,194,156,.92) 38%, rgba(216,194,156,0) 72%);
       box-shadow:0 0 18px rgba(216,194,156,.56);
       animation:sparkle 3.8s ease-in-out infinite;
@@ -317,8 +301,7 @@
     .spark::before,.spark::after{
       content:"";
       position:absolute;
-      left:50%;
-      top:50%;
+      left:50%;top:50%;
       transform:translate(-50%,-50%);
       background:rgba(255,249,240,.84);
       border-radius:999px;
@@ -383,9 +366,8 @@
       cursor:pointer;
       background:radial-gradient(circle at 28% 24%, #e4cda7, #c5a77f 58%, #a17f59 100%);
       color:#fffaf2;
-      font-family:"Cormorant Garamond",serif;
+      font-family:"Amiri", serif;
       font-size:30px;
-      letter-spacing:.06em;
       border:1px solid rgba(255,255,255,.22);
       box-shadow:
         inset 0 2px 4px rgba(255,255,255,.25),
@@ -408,9 +390,8 @@
 
     .tap-text{
       margin-top:20px;
-      font-size:10px;
-      letter-spacing:.32em;
-      text-transform:uppercase;
+      font-size:11px;
+      letter-spacing:.18em;
       color:#9b8770;
       animation:tapBlink 2.8s ease-in-out infinite;
       position:relative;
@@ -479,15 +460,11 @@
       align-items:center;
       gap:10px;
       white-space:nowrap;
-      font-size:.84rem;
-      letter-spacing:.16em;
-      text-transform:uppercase;
+      font-size:.9rem;
       color:#786956;
     }
     .brand-dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
+      width:10px;height:10px;border-radius:50%;
       background:linear-gradient(180deg,var(--gold2),var(--gold));
       box-shadow:0 0 0 4px rgba(186,155,115,.12);
     }
@@ -499,9 +476,7 @@
     .nav a{
       text-decoration:none;
       color:#6e5f4d;
-      font-size:.76rem;
-      letter-spacing:.14em;
-      text-transform:uppercase;
+      font-size:.82rem;
       padding:8px 12px;
       border-radius:999px;
       transition:.22s ease;
@@ -518,7 +493,6 @@
       margin:14px auto 0;
       padding:0 14px 34px;
     }
-
     .section-card{
       position:relative;
       overflow:hidden;
@@ -553,9 +527,9 @@
     }
 
     .section-title{
-      font-family:"Cormorant Garamond",serif;
+      font-family:"Amiri", serif;
       font-size:clamp(2rem, 5vw, 2.85rem);
-      line-height:1.05;
+      line-height:1.2;
       margin:0 0 12px;
       text-align:center;
       color:var(--ink);
@@ -564,7 +538,7 @@
     }
     .section-copy,.copy,.rsvp-copy{
       text-align:center;
-      font-family:"Cormorant Garamond",serif;
+      font-family:"Noto Naskh Arabic", serif;
       color:#625240;
       position:relative;
       z-index:1;
@@ -572,15 +546,15 @@
     .section-copy{
       max-width:760px;
       margin:0 auto 24px;
-      font-size:clamp(1.16rem, 2.6vw, 1.42rem);
-      line-height:1.5;
+      font-size:1.25rem;
+      line-height:1.9;
     }
     .script{
       text-align:center;
-      font-family:"Great Vibes",cursive;
-      font-size:clamp(3.2rem, 10vw, 5rem);
+      font-family:"Amiri", serif;
+      font-size:clamp(3rem, 10vw, 4.5rem);
       color:#aa8758;
-      line-height:.95;
+      line-height:1.1;
       margin:0 0 14px;
       position:relative;
       z-index:1;
@@ -588,8 +562,8 @@
     .copy{
       max-width:92%;
       margin:0 auto 20px;
-      font-size:clamp(1.22rem, 4vw, 1.55rem);
-      line-height:1.36;
+      font-size:1.25rem;
+      line-height:1.9;
     }
 
     .photo-large{
@@ -615,6 +589,7 @@
       inset:0;
       background:linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,0) 22%, rgba(255,255,255,.08) 100%);
     }
+
     .fallback{
       position:absolute;
       inset:0;
@@ -625,9 +600,7 @@
       gap:8px;
       background:linear-gradient(180deg,#ddd0bf,#cdbba5);
       color:rgba(84,69,52,.55);
-      font-family:"Cormorant Garamond",serif;
-      text-transform:uppercase;
-      letter-spacing:.16em;
+      font-family:"Amiri", serif;
       font-size:12px;
       z-index:2;
     }
@@ -653,17 +626,16 @@
       box-shadow:0 10px 24px rgba(74,61,48,.05);
     }
     .timeline-year{
-      font-family:"Cormorant Garamond",serif;
-      font-size:1.42rem;
+      font-family:"Amiri", serif;
+      font-size:1.45rem;
       color:#a28661;
       align-self:center;
-      line-height:1.25;
-      letter-spacing:.01em;
+      line-height:1.5;
     }
     .timeline-text{
-      font-family:"Cormorant Garamond",serif;
+      font-family:"Noto Naskh Arabic", serif;
       font-size:1.22rem;
-      line-height:1.58;
+      line-height:1.9;
       color:#5f4f3d;
     }
 
@@ -683,30 +655,23 @@
       text-align:center;
     }
     .info .icon{
-      width:48px;
-      height:48px;
-      display:grid;
-      place-items:center;
-      margin:0 auto 10px;
-      border-radius:50%;
+      width:48px;height:48px;display:grid;place-items:center;
+      margin:0 auto 10px;border-radius:50%;
       border:1px solid rgba(186,155,115,.34);
-      color:#9c815d;
-      font-family:"Cormorant Garamond",serif;
-      font-size:22px;
+      color:#9c815d;font-family:"Amiri", serif;font-size:22px;
     }
     .info .main{
-      font-family:"Cormorant Garamond",serif;
-      text-transform:uppercase;
+      font-family:"Amiri", serif;
       color:#594a3b;
-      line-height:1.18;
-      font-size:1.12rem;
+      line-height:1.4;
+      font-size:1.2rem;
     }
     .info .sub{
-      font-family:"Cormorant Garamond",serif;
+      font-family:"Noto Naskh Arabic", serif;
       color:#847463;
       font-size:1.02rem;
       margin-top:4px;
-      line-height:1.16;
+      line-height:1.6;
     }
 
     .buttons{
@@ -724,12 +689,11 @@
       padding:16px 18px;
       text-decoration:none;
       text-align:center;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      font-size:14px;
+      font-size:15px;
       font-weight:600;
       cursor:pointer;
       transition:transform .22s ease, box-shadow .22s ease;
+      font-family:"Cairo", sans-serif;
     }
     .btn:hover{transform:translateY(-1px)}
     .btn-primary{
@@ -763,42 +727,29 @@
       padding:16px;
     }
     .icon-btn{
-      width:48px;
-      height:48px;
-      border:none;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      cursor:pointer;
+      width:48px;height:48px;border:none;border-radius:50%;
+      display:grid;place-items:center;cursor:pointer;
       background:linear-gradient(180deg, rgba(255,255,255,.86), rgba(248,240,228,.94));
       border:1px solid rgba(186,155,115,.34);
-      color:#8f744f;
-      font-size:17px;
-      flex:0 0 48px;
+      color:#8f744f;font-size:17px;flex:0 0 48px;
     }
     .track{flex:1;min-width:0}
     .track-title{
-      font-family:"Cormorant Garamond",serif;
-      font-size:1.35rem;
+      font-family:"Amiri", serif;
+      font-size:1.45rem;
       color:#504131;
       margin-bottom:2px;
     }
     .track-sub{
-      font-size:.95rem;
+      font-size:1rem;
       color:#8a7a67;
       margin-bottom:10px;
     }
     .progress{
-      width:100%;
-      height:4px;
-      background:rgba(186,155,115,.24);
-      border-radius:999px;
-      overflow:hidden;
+      width:100%;height:4px;background:rgba(186,155,115,.24);border-radius:999px;overflow:hidden
     }
     .progress-fill{
-      width:0%;
-      height:100%;
-      background:linear-gradient(90deg,#d5bd99,#b89c75);
+      width:0%;height:100%;background:linear-gradient(90deg,#d5bd99,#b89c75)
     }
 
     .countdown{
@@ -816,7 +767,7 @@
       text-align:center;
     }
     .count-num{
-      font-family:"Cormorant Garamond",serif;
+      font-family:"Amiri", serif;
       font-size:clamp(2rem, 5vw, 2.7rem);
       font-weight:700;
       color:#4a3b2e;
@@ -824,9 +775,7 @@
     }
     .count-label{
       margin-top:6px;
-      font-size:.76rem;
-      text-transform:uppercase;
-      letter-spacing:.14em;
+      font-size:.9rem;
       color:#8b7d70;
     }
 
@@ -843,9 +792,8 @@
     .rsvp-title{
       margin:0 0 4px;
       text-align:center;
-      font-family:"Cormorant Garamond",serif;
+      font-family:"Amiri", serif;
       font-size:2rem;
-      text-transform:uppercase;
       color:#4a3a2d;
     }
     .rsvp-copy{
@@ -861,11 +809,9 @@
     .field label{
       display:block;
       margin-bottom:6px;
-      font-size:.76rem;
+      font-size:.9rem;
       font-weight:600;
       color:#8a7b6d;
-      letter-spacing:.14em;
-      text-transform:uppercase;
     }
     .field input,.field select,.field textarea{
       width:100%;
@@ -876,6 +822,7 @@
       color:var(--ink);
       font:inherit;
       outline:none;
+      font-family:"Cairo", sans-serif;
     }
     .field textarea{
       min-height:110px;
@@ -891,9 +838,7 @@
     }
     .footer-note{
       text-align:center;
-      font-size:.82rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
+      font-size:.9rem;
       color:var(--muted);
       margin-top:14px;
     }
@@ -930,26 +875,26 @@
 
   <div class="loader" id="loader">
     <div class="loader-mark">I&amp;M</div>
-    <div class="loader-title">Islam &amp; Mayar</div>
-    <div class="loader-sub">Wedding Invitation</div>
+    <div class="loader-title">إسلام وميار</div>
+    <div class="loader-sub">دعوة زفاف</div>
   </div>
 
   <div class="opening-overlay" id="openingOverlay">
     <div class="opening-panel">
-      <div class="opening-eyebrow">A Special Invitation</div>
-      <h2 class="opening-title" id="overlayTitle">For Our Dear Guest</h2>
-      <p class="opening-text">We are delighted to welcome you to share this unforgettable evening with us.</p>
+      <div class="opening-eyebrow">دعوة خاصة</div>
+      <h2 class="opening-title" id="overlayTitle">دعوتك جاهزة</h2>
+      <p class="opening-text">يسعدنا ويشرفنا حضورك ومشاركتنا هذه اللحظة الجميلة.</p>
     </div>
   </div>
 
   <div class="site">
     <section class="cover" id="cover">
       <div class="cover-card">
-        <div class="eyebrow" id="familyLine">Together with their families</div>
-        <div class="cover-chip">Wedding Invitation</div>
-        <h1 class="cover-title" id="heroTitle">Come Celebrate With Us</h1>
+        <div class="eyebrow" id="familyLine">بدعوة كريمة من العائلتين</div>
+        <div class="cover-chip">دعوة زفاف</div>
+        <h1 class="cover-title" id="heroTitle">يسعدنا حضوركم ومشاركتكم فرحتنا</h1>
         <div class="guest-badge" id="guestNameBadge"></div>
-        <div class="date-line" id="dateLine">Tuesday, 2 June 2026</div>
+        <div class="date-line" id="dateLine">الثلاثاء ٢ يونيو ٢٠٢٦</div>
 
         <div class="cover-stage">
           <div class="cover-glow"></div>
@@ -959,11 +904,11 @@
           </div>
 
           <div class="cover-plate">
-            <button class="seal-button" id="openButton" aria-label="Open invitation">I&amp;M</button>
+            <button class="seal-button" id="openButton" aria-label="افتح الدعوة">I&amp;M</button>
           </div>
         </div>
 
-        <div class="tap-text">Tap to Open</div>
+        <div class="tap-text">اضغط لفتح الدعوة</div>
       </div>
     </section>
 
@@ -971,91 +916,91 @@
       <div class="topbar">
         <div class="brand">
           <span class="brand-dot"></span>
-          <span>Islam &amp; Mayar</span>
+          <span>إسلام وميار</span>
         </div>
         <div class="nav">
-          <a href="#story">Story</a>
-          <a href="#details">Details</a>
-          <a href="#moments">Moments</a>
-          <a href="#timeline">Timeline</a>
-          <a href="#rsvp">RSVP</a>
+          <a href="#story">الدعوة</a>
+          <a href="#details">التفاصيل</a>
+          <a href="#moments">العدّاد</a>
+          <a href="#timeline">قصتنا</a>
+          <a href="#rsvp">التأكيد</a>
         </div>
       </div>
 
       <div class="section-stack">
         <section id="story">
           <div class="section-card section-enter">
-            <div class="eyebrow">The Couple</div>
-            <div class="script" id="coupleNames">Islam &amp; Mayar</div>
-            <p class="copy" id="inviteCopy">request the pleasure of your company as they celebrate their marriage</p>
+            <div class="eyebrow">العروسان</div>
+            <div class="script" id="coupleNames">إسلام وميار</div>
+            <p class="copy" id="inviteCopy">يتشرفان بدعوتكم لمشاركتهما فرحة الزفاف في هذه المناسبة السعيدة.</p>
 
             <div class="photo-large">
               <div class="fallback" id="mainFallback">
                 <div class="icon">⌲</div>
-                <div>Image not found</div>
+                <div>الصورة غير متاحة</div>
               </div>
             </div>
 
             <div class="buttons">
-              <a class="btn btn-primary" id="locationBtn" href="https://maps.app.goo.gl/FmuCA1K6XNKTJBzA7" target="_blank" rel="noopener noreferrer">View Location</a>
-              <a class="btn btn-secondary" href="#details">Continue</a>
+              <a class="btn btn-primary" id="locationBtn" href="https://maps.app.goo.gl/FmuCA1K6XNKTJBzA7" target="_blank" rel="noopener noreferrer">عرض الموقع</a>
+              <a class="btn btn-secondary" href="#details">متابعة</a>
             </div>
           </div>
         </section>
 
         <section id="details">
           <div class="section-card section-enter">
-            <div class="eyebrow">Event Details</div>
-            <h2 class="section-title">An Evening to Remember</h2>
-            <p class="section-copy">We would be honored to celebrate this beautiful evening with you in an atmosphere of warmth, elegance, and joy.</p>
+            <div class="eyebrow">تفاصيل المناسبة</div>
+            <h2 class="section-title">أمسية لا تُنسى</h2>
+            <p class="section-copy">نكون سعداء جدًا بوجودكم معنا للاحتفال بهذه الليلة المميزة وسط أجواء من الفرح والمحبة.</p>
 
             <div class="info-grid">
               <div class="info">
                 <div class="icon">✦</div>
-                <div class="main" id="dateText">02 / 06 / 2026</div>
-                <div class="sub" id="weekdayText">Tuesday</div>
+                <div class="main" id="dateText">٠٢ / ٠٦ / ٢٠٢٦</div>
+                <div class="sub" id="weekdayText">الثلاثاء</div>
               </div>
               <div class="info">
                 <div class="icon">◷</div>
-                <div class="main" id="timeText">7:00 PM</div>
-                <div class="sub" id="timeSubText">Evening</div>
+                <div class="main" id="timeText">٧:٠٠ مساءً</div>
+                <div class="sub" id="timeSubText">موعد الحفل</div>
               </div>
               <div class="info">
                 <div class="icon">⌂</div>
-                <div class="main" id="venueText">Jewel Sport City Resort</div>
-                <div class="sub" id="venueSubText">Treasure Hall</div>
+                <div class="main" id="venueText">جويل سبورت سيتي ريزورت</div>
+                <div class="sub" id="venueSubText">قاعة Treasure Hall</div>
               </div>
             </div>
 
             <div class="buttons">
-              <a class="btn btn-primary" href="https://maps.app.goo.gl/FmuCA1K6XNKTJBzA7" target="_blank" rel="noopener noreferrer">Open Location</a>
-              <a class="btn btn-secondary" href="#moments">See More</a>
+              <a class="btn btn-primary" href="https://maps.app.goo.gl/FmuCA1K6XNKTJBzA7" target="_blank" rel="noopener noreferrer">فتح الموقع</a>
+              <a class="btn btn-secondary" href="#moments">رؤية العدّاد</a>
             </div>
           </div>
         </section>
 
         <section id="moments">
           <div class="section-card section-enter">
-            <div class="eyebrow">Moments &amp; Music</div>
-            <h2 class="section-title">Before We Meet</h2>
-            <p class="section-copy">Let the music play while the countdown brings us closer to the start of our new chapter together.</p>
+            <div class="eyebrow">اللحظات والانتظار</div>
+            <h2 class="section-title">حتى نلتقي</h2>
+            <p class="section-copy">دع الموسيقى ترافقك، والعدّاد يقربنا أكثر إلى بداية أجمل فصل في حياتنا.</p>
 
             <div class="music-wrap">
               <div class="music">
-                <button class="icon-btn" id="playBtn" aria-label="Play music">▶</button>
+                <button class="icon-btn" id="playBtn" aria-label="تشغيل الموسيقى">▶</button>
                 <div class="track">
-                  <div class="track-title" id="musicTitle">Our Song</div>
-                  <div class="track-sub" id="musicArtist">Play the soundtrack of our evening</div>
+                  <div class="track-title" id="musicTitle">أغنيتنا</div>
+                  <div class="track-sub" id="musicArtist">استمع إلى لحن هذه الليلة</div>
                   <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
                 </div>
-                <button class="icon-btn" id="muteBtn" aria-label="Mute music">🔊</button>
+                <button class="icon-btn" id="muteBtn" aria-label="كتم الموسيقى">🔊</button>
               </div>
 
               <div class="countdown">
-                <div class="count"><div class="count-num" id="days">00</div><div class="count-label">Days</div></div>
-                <div class="count"><div class="count-num" id="hours">00</div><div class="count-label">Hours</div></div>
-                <div class="count"><div class="count-num" id="minutes">00</div><div class="count-label">Minutes</div></div>
-                <div class="count"><div class="count-num" id="seconds">00</div><div class="count-label">Seconds</div></div>
+                <div class="count"><div class="count-num" id="days">00</div><div class="count-label">يوم</div></div>
+                <div class="count"><div class="count-num" id="hours">00</div><div class="count-label">ساعة</div></div>
+                <div class="count"><div class="count-num" id="minutes">00</div><div class="count-label">دقيقة</div></div>
+                <div class="count"><div class="count-num" id="seconds">00</div><div class="count-label">ثانية</div></div>
               </div>
             </div>
           </div>
@@ -1063,31 +1008,29 @@
 
         <section id="timeline">
           <div class="section-card section-enter">
-            <div class="eyebrow">Our Story</div>
-            <h2 class="section-title">A Simple Timeline of Us</h2>
-            <p class="section-copy">Every beautiful beginning is made of small unforgettable moments.</p>
+            <div class="eyebrow">قصتنا</div>
+            <h2 class="section-title">بداية الحكاية</h2>
+            <p class="section-copy">كل بداية جميلة تصنعها لحظات صغيرة لا تُنسى.</p>
 
             <div class="timeline">
               <div class="timeline-item">
-                <div class="timeline-year">December 27, 2025</div>
+                <div class="timeline-year">27 ديسمبر 2025</div>
                 <div class="timeline-text">
-                  The day we recited Al-Fatiha together,<br>
-                  and the first "In the name of God" of a dream that began to grow.
+                  اليوم الذي قرأنا فيه الفاتحة معًا، وكانت أول <strong>بسم الله</strong> في حلم بدأ يكبر معنا.
                 </div>
               </div>
 
               <div class="timeline-item">
-                <div class="timeline-year">January 28, 2026</div>
+                <div class="timeline-year">28 يناير 2026</div>
                 <div class="timeline-text">
-                  The day we bound ourselves to love's vow before everyone.
+                  اليوم الذي توثقت فيه قلوبنا بوعد الحب أمام الجميع.
                 </div>
               </div>
 
               <div class="timeline-item">
-                <div class="timeline-year">June 2, 2026</div>
+                <div class="timeline-year">2 يونيو 2026</div>
                 <div class="timeline-text">
-                  The day we open the door of eternity together,<br>
-                  and write the first chapters of "Once upon a time" under one roof.
+                  اليوم الذي نفتح فيه باب الأبدية معًا، ونكتب أول فصول <strong>كان يا ما كان</strong> تحت سقف واحد.
                 </div>
               </div>
             </div>
@@ -1096,52 +1039,52 @@
 
         <section id="rsvp">
           <div class="section-card section-enter">
-            <div class="eyebrow">Confirmation</div>
-            <h2 class="section-title">We Would Love to Hear From You</h2>
-            <p class="section-copy">Your confirmation means so much to us. Please let us know if you will be joining our special day.</p>
+            <div class="eyebrow">تأكيد الحضور</div>
+            <h2 class="section-title">يسعدنا ردكم</h2>
+            <p class="section-copy">يشرفنا كثيرًا تأكيد حضوركم ومشاركتكم هذه المناسبة السعيدة.</p>
 
             <div class="rsvp">
-              <h3 class="rsvp-title">RSVP</h3>
-              <p class="rsvp-copy">Send your confirmation directly on WhatsApp.</p>
+              <h3 class="rsvp-title">تأكيد الحضور</h3>
+              <p class="rsvp-copy">أرسل تأكيدك مباشرة عبر واتساب.</p>
 
               <div class="form-grid">
                 <div class="field">
-                  <label for="guestNameInput">Guest Name</label>
-                  <input id="guestNameInput" type="text" placeholder="Enter your name" />
+                  <label for="guestNameInput">اسم الضيف</label>
+                  <input id="guestNameInput" type="text" placeholder="اكتب اسمك" />
                 </div>
                 <div class="field">
-                  <label for="attendance">Attendance</label>
+                  <label for="attendance">الحضور</label>
                   <select id="attendance">
-                    <option value="With joy, I will be attending">With joy, I will be attending</option>
-                    <option value="With warm wishes, I regret that I cannot attend">With warm wishes, I cannot attend</option>
+                    <option value="يسعدني الحضور بكل سرور">يسعدني الحضور بكل سرور</option>
+                    <option value="أعتذر عن الحضور مع خالص الأمنيات">أعتذر عن الحضور مع خالص الأمنيات</option>
                   </select>
                 </div>
                 <div class="field">
-                  <label for="guests">Number of Guests</label>
+                  <label for="guests">عدد المرافقين</label>
                   <select id="guests">
-                    <option value="1">1 Guest</option>
-                    <option value="2">2 Guests</option>
-                    <option value="3">3 Guests</option>
-                    <option value="4">4 Guests</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                   </select>
                 </div>
                 <div class="field">
-                  <label for="phone">Phone Number</label>
-                  <input id="phone" type="text" placeholder="Optional" />
+                  <label for="phone">رقم الهاتف</label>
+                  <input id="phone" type="text" placeholder="اختياري" />
                 </div>
                 <div class="field full">
-                  <label for="message">A Note for the Couple</label>
-                  <textarea id="message" placeholder="Leave a lovely note"></textarea>
+                  <label for="message">رسالة للعروسين</label>
+                  <textarea id="message" placeholder="اكتب رسالتك هنا"></textarea>
                 </div>
               </div>
 
               <div class="buttons">
-                <button class="btn btn-primary" id="rsvpWhatsApp" type="button">RSVP on WhatsApp</button>
+                <button class="btn btn-primary" id="rsvpWhatsApp" type="button">تأكيد الحضور عبر واتساب</button>
               </div>
               <div class="status" id="status"></div>
             </div>
 
-            <div class="footer-note">Islam &amp; Mayar — 2 June 2026</div>
+            <div class="footer-note">إسلام وميار — ٢ يونيو ٢٠٢٦</div>
           </div>
         </section>
       </div>
@@ -1154,24 +1097,24 @@
 
   <script>
     const INVITE = {
-      groom: "Islam",
-      bride: "Mayar",
+      groom: "إسلام",
+      bride: "ميار",
       eventDateISO: "2026-06-02T19:00:00",
-      dateLine: "Tuesday, 2 June 2026",
-      dateText: "02 / 06 / 2026",
-      weekdayText: "Tuesday",
-      timeText: "7:00 PM",
-      timeSubText: "Evening",
-      venueText: "Jewel Sport City Resort",
-      venueSubText: "Treasure Hall",
+      dateLine: "الثلاثاء ٢ يونيو ٢٠٢٦",
+      dateText: "٠٢ / ٠٦ / ٢٠٢٦",
+      weekdayText: "الثلاثاء",
+      timeText: "٧:٠٠ مساءً",
+      timeSubText: "موعد الحفل",
+      venueText: "جويل سبورت سيتي ريزورت",
+      venueSubText: "قاعة Treasure Hall",
       locationUrl: "https://maps.app.goo.gl/FmuCA1K6XNKTJBzA7",
       whatsappNumber: "201016660575",
-      heroTitle: "Come Celebrate With Us",
-      familyLine: "Together with their families",
-      inviteCopy: "request the pleasure of your company as they celebrate their marriage",
-      locationButton: "View Location",
-      musicTitle: "Our Song",
-      musicArtist: "Play the soundtrack of our evening"
+      heroTitle: "يسعدنا حضوركم ومشاركتكم فرحتنا",
+      familyLine: "بدعوة كريمة من العائلتين",
+      inviteCopy: "يتشرفان بدعوتكم لمشاركتهما فرحة الزفاف في هذه المناسبة السعيدة.",
+      locationButton: "عرض الموقع",
+      musicTitle: "أغنيتنا",
+      musicArtist: "استمع إلى لحن هذه الليلة"
     };
 
     const $ = (id) => document.getElementById(id);
@@ -1202,7 +1145,7 @@
       $("familyLine").textContent = INVITE.familyLine;
       $("heroTitle").textContent = INVITE.heroTitle;
       $("dateLine").textContent = INVITE.dateLine;
-      $("coupleNames").textContent = INVITE.groom + " & " + INVITE.bride;
+      $("coupleNames").textContent = INVITE.groom + " و " + INVITE.bride;
       $("inviteCopy").textContent = INVITE.inviteCopy;
       $("dateText").textContent = INVITE.dateText;
       $("weekdayText").textContent = INVITE.weekdayText;
@@ -1217,12 +1160,12 @@
 
       const guest = getGuestNameFromURL();
       if(guest){
-        $("guestNameBadge").textContent = "For " + guest;
+        $("guestNameBadge").textContent = "الدعوة خاصة بـ " + guest;
         $("guestNameInput").value = guest;
-        overlayTitle.textContent = "For " + guest;
+        overlayTitle.textContent = "الدعوة خاصة بـ " + guest;
       } else {
-        $("guestNameBadge").textContent = "For Our Dear Guest";
-        overlayTitle.textContent = "For Our Dear Guest";
+        $("guestNameBadge").textContent = "دعوة خاصة";
+        overlayTitle.textContent = "دعوتك جاهزة";
       }
     }
 
@@ -1339,12 +1282,10 @@
       setTimeout(() => {
         cover.classList.add("hidden");
         sections.classList.add("show");
-        document.body.classList.add("invitation-opened");
 
         setTimeout(() => {
           observeSections();
           fadeInMusic();
-
           document.getElementById("story")?.scrollIntoView({
             behavior: "smooth",
             block: "start"
@@ -1395,34 +1336,34 @@
     }
 
     function buildWhatsAppMessage(){
-      const guestName = $("guestNameInput").value.trim() || getGuestNameFromURL() || "Guest";
+      const guestName = $("guestNameInput").value.trim() || getGuestNameFromURL() || "ضيف";
       const attendance = $("attendance").value;
       const guests = $("guests").value;
       const phone = $("phone").value.trim();
       const message = $("message").value.trim();
 
       return [
-        "✨ Wedding Invitation RSVP ✨",
+        "✨ تأكيد حضور دعوة زفاف ✨",
         "",
-        "Islam & Mayar",
-        "June 2, 2026",
-        "Jewel Sport City Resort",
+        "إسلام وميار",
+        "٢ يونيو ٢٠٢٦",
+        "جويل سبورت سيتي ريزورت",
         "",
-        "— Guest Details —",
-        "Name: " + guestName,
-        "Attendance: " + attendance,
-        "Guests: " + guests,
-        phone ? "Phone: " + phone : "",
+        "— بيانات الضيف —",
+        "الاسم: " + guestName,
+        "الحضور: " + attendance,
+        "عدد المرافقين: " + guests,
+        phone ? "الهاتف: " + phone : "",
         "",
-        message ? "Message: " + message : "",
+        message ? "الرسالة: " + message : "",
         "",
-        "We are honored to celebrate with you 💛"
+        "يشرفنا حضوركم ومشاركتكم فرحتنا 🤍"
       ].filter(Boolean).join("\n");
     }
 
     $("rsvpWhatsApp").addEventListener("click", function(){
       const text = encodeURIComponent(buildWhatsAppMessage());
-      $("status").textContent = "Opening WhatsApp…";
+      $("status").textContent = "جاري فتح واتساب...";
       window.open(`https://wa.me/${INVITE.whatsappNumber}?text=${text}`, "_blank");
     });
 
@@ -1441,7 +1382,6 @@
     });
 
     sections.classList.remove("show");
-    document.body.classList.remove("invitation-opened");
 
     initContent();
     detectImage();
