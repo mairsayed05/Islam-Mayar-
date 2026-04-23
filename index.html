@@ -1471,20 +1471,6 @@
   parallaxTwo.style.transform = `translateY(${y * 0.18}px)`;
 }, { passive: true });
 
-function openInvitation(){
-  const cover = document.getElementById("cover");
-  const sections = document.getElementById("sections");
-
-  if (!cover || !sections) return;
-
-  cover.style.opacity = "0";
-  cover.style.transform = "scale(1.05)";
-
-  setTimeout(() => {
-    cover.style.display = "none";
-    sections.classList.add("show");
-  }, 500);
-  }
 document.getElementById("openButton").addEventListener("click", openInvitation);
 
     initContent();
