@@ -16,16 +16,13 @@
       --bg:#f6f0e8;
       --bg2:#ece2d6;
       --paper:#fcf8f2;
-      --paper2:#f4ece1;
       --ink:#4a3d30;
       --muted:#8b7d6c;
       --gold:#ba9b73;
       --gold2:#d8c29c;
       --gold3:#9b7b58;
-      --line:rgba(125,100,68,.14);
       --shadow:0 26px 80px rgba(74,61,48,.12);
       --soft-shadow:0 14px 34px rgba(74,61,48,.08);
-      --radius:32px;
       --gap:16px;
     }
 
@@ -463,14 +460,22 @@
       position:relative;
       z-index:2;
       opacity:0;
+      visibility:hidden;
+      pointer-events:none;
       max-height:0;
       overflow:hidden;
-      transform:translateY(18px);
-      transition:opacity .9s ease, max-height 1.3s ease, transform .9s ease;
+      transform:translateY(28px);
+      transition:
+        opacity .9s ease,
+        transform .9s ease,
+        max-height 1.2s ease,
+        visibility .9s ease;
     }
 
     .sections.show{
       opacity:1;
+      visibility:visible;
+      pointer-events:auto;
       max-height:9999px;
       transform:translateY(0);
     }
@@ -637,9 +642,12 @@
       aspect-ratio:1/.92;
       border-radius:28px;
       overflow:hidden;
-      background:
+      background-image:
         linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.06)),
-        url('couple.jpg') center/cover no-repeat;
+        url('./couple.jpg');
+      background-position:center;
+      background-size:cover;
+      background-repeat:no-repeat;
       box-shadow:var(--soft-shadow);
       position:relative;
       z-index:1;
@@ -1276,7 +1284,7 @@
       img.onerror = function(){
         $("mainFallback").classList.add("show");
       };
-      img.src = "couple.jpg";
+      img.src = "./couple.jpg";
     }
 
     function hideLoader(){
@@ -1374,8 +1382,14 @@
         sections.classList.add("show");
         observeSections();
         fadeInMusic();
-        document.getElementById("story").scrollIntoView({ behavior:"smooth", block:"start" });
-      }, 820);
+
+        setTimeout(() => {
+          document.getElementById("story")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }, 300);
+      }, 900);
     }
 
     openButton.addEventListener("click", openInvitation);
@@ -1408,14 +1422,11 @@
       progressFill.style.width = ((music.currentTime / music.duration) * 100) + "%";
     });
 
-    function pad(num){
-      return String(num).padStart(2, "0");
-    }
-
     function updateCountdown(){
-      const target = new Date(INVITE.eventDateISO).getTime();
+      const target = new Date("2026-06-02T19:00:00").getTime();
       const now = Date.now();
       let diff = target - now;
+
       if(diff < 0) diff = 0;
 
       const d = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -1423,10 +1434,10 @@
       const m = Math.floor((diff / (1000 * 60)) % 60);
       const s = Math.floor((diff / 1000) % 60);
 
-      $("days").textContent = pad(d);
-      $("hours").textContent = pad(h);
-      $("minutes").textContent = pad(m);
-      $("seconds").textContent = pad(s);
+      $("days").textContent = String(d).padStart(2, "0");
+      $("hours").textContent = String(h).padStart(2, "0");
+      $("minutes").textContent = String(m).padStart(2, "0");
+      $("seconds").textContent = String(s).padStart(2, "0");
     }
 
     function buildRSVPMessage(){
